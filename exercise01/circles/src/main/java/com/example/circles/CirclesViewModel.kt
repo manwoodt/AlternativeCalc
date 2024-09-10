@@ -38,11 +38,11 @@ class CirclesViewModel : ViewModel() {
             val r2 = validateDoubleRad(r2.value, true)
 
             if (x1 == null || y1 == null || r1 == null || x2 == null || y2 == null || r2 == null) {
-                _result.value = "Couldn't parse a number. Please, try again"
+                _result.postValue("Couldn't parse a number. Please, try again")
                 Logger.e(message = "Invalid input detected")
                 return@launch
             }
-            _result.value = circlesModel.checkIntersection(x1, y1, r1, x2, y2, r2)
+            _result.postValue(circlesModel.checkIntersection(x1, y1, r1, x2, y2, r2))
             Logger.i(message = "$this ended")
         }
     }

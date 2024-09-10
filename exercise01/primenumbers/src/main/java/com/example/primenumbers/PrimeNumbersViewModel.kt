@@ -16,7 +16,7 @@ class PrimeNumbersViewModel : ViewModel() {
     fun analyzeNumber(number:Int, order: PrimeNumbersModel.Order){
     viewModelScope.launch(Dispatchers.IO) {
         Logger.i(message = "$this started")
-        _result.value = primeNumbersModel.analyzeNumbers(number, order)
+        _result.postValue(primeNumbersModel.analyzeNumbers(number, order))
         Logger.i(message = "$this ended")
     }
     }

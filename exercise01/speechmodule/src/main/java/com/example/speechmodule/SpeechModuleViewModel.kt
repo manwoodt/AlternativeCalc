@@ -27,7 +27,7 @@ class SpeechModuleViewModel : ViewModel() {
 
             if (number != null && number in -1_000_000_000..1_000_000_000) {
                 val result = convertNumberToWords(number)
-                _outputText.value = result
+                _outputText.postValue(result)
                 Logger.d(message = "Converted number to words: $result")
             } else {
                 val errorMessage = if (number == null) {
@@ -35,7 +35,7 @@ class SpeechModuleViewModel : ViewModel() {
                 } else {
                     "The number is out of bounds, try again."
                 }
-                _outputText.value = errorMessage
+                _outputText.postValue(errorMessage)
                 Logger.w(message = "Invalid input: $errorMessage")
             }
             Logger.i(message = "$this eded")
