@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Ex04</string>
+    <string name="circles">Circles</string>
+    <string name="prime_numbers">Prime Numbers</string>
+    <string name="thermometer">Thermometer</string>
+    <string name="speech_module">Speech Module</string>
+</resources>
