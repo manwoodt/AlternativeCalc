@@ -43,5 +43,9 @@ class MenuFragment : FragmentLogger() {
             Logger.i(message = "Speech Module button tapped")
             findNavController().navigate(R.id.action_menuFragment_to_speechModuleFragment)
         }
+        binding.btnCalc.setOnClickListener {
+            Logger.i(message = "Calc button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_calcFragment)
+        }
     }
 }

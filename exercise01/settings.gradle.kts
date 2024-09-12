@@ -19,7 +19,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Ex04"
+rootProject.name = "Day05"
 include(":app")
 include(":circles")
 include(":primenumbers")

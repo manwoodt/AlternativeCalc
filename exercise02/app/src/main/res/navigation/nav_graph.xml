@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_menuFragment_to_speechModuleFragment"
             app:destination="@id/speechModuleFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_calcFragment"
+            app:destination="@id/calcFragment" />
 
     </fragment>
 
@@ -63,5 +66,10 @@
             android:id="@+id/action_speechModuleFragment_to_menuFragment"
             app:destination="@id/menuFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/calcFragment"
+        android:name="com.course.calc.CalcFragment"
+        android:label="CalcFragment"
+        tools:layout="@layout/fragment_calc"/>
 
 </navigation>

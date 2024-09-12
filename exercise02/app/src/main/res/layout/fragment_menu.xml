@@ -4,61 +4,53 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".ui.menu.MenuFragment">
 
-    <data>
-        <!-- Declare ViewModel or any variables if needed -->
-    </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#defabb"
+        android:orientation="vertical"
         android:padding="16dp">
 
         <Button
             android:id="@+id/btnCircles"
             style="@style/ButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="80dp"
             android:text="@string/circles"
-            app:layout_constraintBottom_toTopOf="@+id/btnPrime"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_marginTop="120dp" />
 
         <Button
             android:id="@+id/btnPrime"
             style="@style/ButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/prime_numbers"
-            app:layout_constraintBottom_toTopOf="@+id/btnThermometer"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnCircles" />
+            android:layout_marginTop="40dp" />
 
         <Button
             android:id="@+id/btnThermometer"
             style="@style/ButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/thermometer"
-            app:layout_constraintBottom_toTopOf="@+id/btnSpeechModule"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnPrime" />
+            android:layout_marginTop="40dp" />
 
         <Button
             android:id="@+id/btnSpeechModule"
             style="@style/ButtonStyle"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="80dp"
             android:text="@string/speech_module"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnThermometer" />
+            android:layout_marginTop="40dp" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btnCalc"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calc"
+            android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
 </layout>

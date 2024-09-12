@@ -1,0 +1,11 @@
+<resources>
+
+    <string name="btn_calculate_factorial">Calculate Factorial</string>
+    <string name="btn_calculate_square_cube_root">Calculate Square &amp; Cube Root</string>
+    <string name="btn_calculate_logarithms">Calculate Logarithms</string>
+    <string name="btn_calculate_square_cube">Calculate Square &amp; Cube</string>
+    <string name="btn_simplicity_test">Simplicity Test</string>
+    <string name="btn_run_all">Run All Calculations</string>
+    <string name="hint_enter_number">Enter a number</string>
+    <string name="error_message">An error has occurred. Please try again.</string>
+</resources>

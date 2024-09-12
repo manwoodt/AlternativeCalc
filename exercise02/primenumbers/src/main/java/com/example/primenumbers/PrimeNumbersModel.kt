@@ -9,7 +9,7 @@ class PrimeNumbersModel {
         if (numberToCheck < 2) return false
 
         val maxSqrtNumber = sqrt(numberToCheck.toDouble()).toInt()
-        for (i in 2..maxSqrtNumber step 2) {
+        for (i in 2..maxSqrtNumber) {
             if (numberToCheck % i == 0) return false
         }
         return true
