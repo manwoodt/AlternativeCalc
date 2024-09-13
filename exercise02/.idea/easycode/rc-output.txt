@@ -1,0 +1,2856 @@
+<passage file_path=/speechmodule/src/main/res/values/strings.xml>
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="enter_a_number">Enter a number</string>
+    <string name="submit">Submit</string>
+</resources>
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesFragment.kt>
+try {
+                    viewModel.x1.value = binding.editTextX1.text.toString()
+                    viewModel.y1.value = binding.editTextY1.text.toString()
+                    viewModel.r1.value = binding.editTextR1.text.toString()
+                    viewModel.x2.value = binding.editTextX2.text.toString()
+                    viewModel.y2.value = binding.editTextY2.text.toString()
+                    viewModel.r2.value = binding.editTextR2.text.toString()
+                    viewModel.checkCircles()
+                } catch (e: NumberFormatException) {
+                    Logger.e("Invalid input", e)
+                }
+
+        }
+
+        viewModel.result.observe(viewLifecycleOwner, Observer { result ->
+            binding.textViewResult.text = result
+        })
+    }
+
+
+    private fun setupLogging() {
+        Logger.i(message = "Setting up logging and binding for EditText fields")
+        binding.editTextX1.addLogging("x1")
+        binding.editTextY1.addLogging("y1")
+</passage>
+<passage file_path=/logger/src/main/java/com/example/logger/AddLogging.kt>
+package com.example.logger
+
+import android.text.Editable
+import android.text.TextWatcher
+import android.widget.EditText
+import androidx.lifecycle.MutableLiveData
+
+fun EditText.addLogging(name: String) {
+    val textWatcher = object : TextWatcher {
+        private var previousText: String? = null
+
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+            previousText = s?.toString()
+        }
+
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            val newText = s?.toString()
+            if (previousText != newText) {
+                Logger.i(name, "Previous value: $previousText, New value: $newText")
+            }
+        }
+
+        override fun afterTextChanged(s: Editable?) {
+            // No additional action needed after text is changed
+        }
+    }
+    this.addTextChangedListener(textWatcher)
+}
+</passage>
+<passage file_path=/speechmodule/src/main/res/layout/fragment_speech_module.xml>
+<Button
+                android:id="@+id/buttonSubmit"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:onClick="@{() -> viewModel.onSubmitClicked()}"
+                android:text="@string/submit" />
+
+            <TextView
+                android:id="@+id/textViewOutput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.outputText}"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
+</passage>
+<passage file_path=/app/src/main/res/drawable/ic_launcher_background.xml>
+<path
+        android:fillColor="#00000000"
+        android:pathData="M0,89L108,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,99L108,99"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,29L89,29"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,39L89,39"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,49L89,49"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,59L89,59"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesFragment.kt>
+Logger.i(message = "Setting up logging and binding for EditText fields")
+        binding.editTextX1.addLogging("x1")
+        binding.editTextY1.addLogging("y1")
+        binding.editTextR1.addLogging("r1")
+        binding.editTextX2.addLogging("x2")
+        binding.editTextY2.addLogging("y2")
+        binding.editTextR2.addLogging("r2")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+}
+</passage>
+<passage file_path=/speechmodule/src/main/res/layout/fragment_speech_module.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.speechmodule.SpeechModuleViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                style="@style/MyEditText"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/enter_a_number"
+                android:text="@={viewModel.inputNumber}" />
+</passage>
+<passage file_path=/app/src/main/res/drawable/ic_launcher_background.xml>
+<path
+        android:fillColor="#00000000"
+        android:pathData="M0,39L108,39"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,49L108,49"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,59L108,59"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,69L108,69"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,79L108,79"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M0,89L108,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+</passage>
+<passage file_path=/app/src/main/java/com/example/ex04/MainActivity.kt>
+super.onResume()
+        Logger.i(message = "MainActivity resumed")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Logger.i(message = "MainActivity paused")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Logger.i(message = "MainActivity stopped")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Logger.i(message = "MainActivity destroyed")
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        Logger.i(message = "Navigating up")
+        return navController.navigateUp() || super.onSupportNavigateUp()
+    }
+}
+</passage>
+<passage file_path=/app/src/main/res/drawable/ic_launcher_background.xml>
+<path
+        android:fillColor="#00000000"
+        android:pathData="M19,59L89,59"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,69L89,69"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M19,79L89,79"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M29,19L29,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M39,19L39,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+        android:fillColor="#00000000"
+        android:pathData="M49,19L49,89"
+        android:strokeWidth="0.8"
+        android:strokeColor="#33FFFFFF" />
+    <path
+</passage>
+<passage file_path=/app/src/main/res/xml/data_extraction_rules.xml>
+<?xml version="1.0" encoding="utf-8"?><!--
+   Sample data extraction rules file; uncomment and customize as necessary.
+   See https://developer.android.com/about/versions/12/backup-restore#xml-changes
+   for details.
+-->
+<data-extraction-rules>
+    <cloud-backup>
+        <!-- TODO: Use <include> and <exclude> to control what is backed up.
+        <include .../>
+        <exclude .../>
+        -->
+    </cloud-backup>
+    <!--
+    <device-transfer>
+        <include .../>
+        <exclude .../>
+    </device-transfer>
+    -->
+</data-extraction-rules>
+</passage>
+<passage file_path=/app/src/main/res/values/themes.xml>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+
+    <style name="GreenAppTheme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="colorPrimary">#8BC34A</item>
+        <item name="colorPrimaryDark">#689F38</item>
+        <item name="colorAccent">#4CAF50</item>
+        <item name="dividerColor">#BDBDBD</item>
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="MyActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:background">#8BC34A</item>
+</passage>
+<passage file_path=/logger/src/main/java/com/example/logger/FragmentLogger.kt>
+super.onPause()
+        Logger.i(tagName, "$fragmentName paused")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Logger.i(tagName, "$fragmentName stopped")
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        Logger.i(tagName, "$fragmentName saved instance state")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        Logger.i(tagName, "$fragmentName view destroyed")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Logger.i(tagName, "$fragmentName destroyed")
+    }
+
+    override fun onDetach() {
+        super.onDetach()
+        Logger.i(tagName, "$fragmentName detached")
+    }
+}
+</passage>
+<passage file_path=/circles/src/main/res/values/strings.xml>
+<resources>
+    <string name="input_x1">Input x1:</string>
+    <string name="input_y1">Input y1:</string>
+    <string name="input_r1">Input r1:</string>
+    <string name="input_x2">Input x2:</string>
+    <string name="input_y2">Input y2:</string>
+    <string name="input_r2">Input r2:</string>
+    <string name="check_intersection">Check Intersection</string>
+</resources>
+</passage>
+<passage file_path=/app/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/GreenAppTheme"
+        tools:targetApi="31">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+<!--        android:theme="@style/Theme.Ex04"-->
+</passage>
+<passage file_path=/calc/src/main/res/layout/fragment_calc.xml>
+<Button
+        android:id="@+id/btnSimplicityTest"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        style="@style/ButtonStyle"
+        android:text="@string/btn_simplicity_test" />
+
+    <Button
+        android:id="@+id/btnRunAll"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/darkest_green"
+        android:backgroundTint="@color/green"
+        android:text="@string/btn_run_all" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+</passage>
+<passage file_path=/app/src/main/res/xml/backup_rules.xml>
+<?xml version="1.0" encoding="utf-8"?><!--
+   Sample backup rules file; uncomment and customize as necessary.
+   See https://developer.android.com/guide/topics/data/autobackup
+   for details.
+   Note: This file is ignored for devices older that API 31
+   See https://developer.android.com/about/versions/12/backup-restore
+-->
+<full-backup-content>
+    <!--
+   <include domain="sharedpref" path="."/>
+   <exclude domain="sharedpref" path="device.xml"/>
+-->
+</full-backup-content>
+</passage>
+<passage file_path=/circles/src/main/res/layout/fragment_circles.xml>
+<EditText
+                android:id="@+id/editTextR1"
+                style="@style/MyEditText"
+                android:hint="@string/input_r1" />
+
+            <EditText
+                android:id="@+id/editTextX2"
+                style="@style/MyEditText"
+                android:hint="@string/input_x2" />
+
+            <EditText
+                android:id="@+id/editTextY2"
+                style="@style/MyEditText"
+                android:hint="@string/input_y2" />
+
+            <EditText
+                android:id="@+id/editTextR2"
+                style="@style/MyEditText"
+                android:hint="@string/input_r2" />
+
+            <Button
+                android:id="@+id/buttonCheckIntersection"
+                style="@style/ButtonStyle"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/check_intersection" />
+</passage>
+<passage file_path=/circles/src/main/res/layout/fragment_circles.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextX1"
+                style="@style/MyEditText"
+                android:hint="@string/input_x1" />
+
+
+            <EditText
+                android:id="@+id/editTextY1"
+                style="@style/MyEditText"
+                android:hint="@string/input_y1" />
+
+            <EditText
+                android:id="@+id/editTextR1"
+                style="@style/MyEditText"
+                android:hint="@string/input_r1" />
+</passage>
+<passage file_path=/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background"/>
+    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
+</adaptive-icon>
+</passage>
+<passage file_path=/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleFragment.kt>
+super.onViewCreated(view, savedInstanceState)
+        Logger.i(message = "SpeechModuleFragment onViewCreated")
+        setupLogging()
+    }
+
+    private fun setupLogging() {
+        Logger.i(message = "Setting up logging and binding for EditText fields")
+        binding.editTextNumber.addLogging("inputNumber")
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding=null
+    }
+}
+</passage>
+<passage file_path=/app/src/main/res/navigation/nav_graph.xml>
+<fragment
+        android:id="@+id/thermometerFragment"
+        android:name="com.example.thermometer.ThermometerFragment"
+        android:label="Thermometer"
+        tools:layout="@layout/fragment_thermometer">
+        <action
+            android:id="@+id/action_thermometerFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/speechModuleFragment"
+        android:name="com.example.speechmodule.SpeechModuleFragment"
+        android:label="Speech Module"
+        tools:layout="@layout/fragment_speech_module">
+        <action
+            android:id="@+id/action_speechModuleFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/calcFragment"
+        android:name="com.course.calc.CalcFragment"
+        android:label="CalcFragment"
+        tools:layout="@layout/fragment_calc"/>
+
+</navigation>
+</passage>
+<passage file_path=/app/src/main/res/layout/fragment_menu.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.menu.MenuFragment">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#defabb"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/btnCircles"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/circles"
+            android:layout_marginTop="120dp" />
+</passage>
+<passage file_path=/logger/src/test/java/com/example/logger/ExampleUnitTest.kt>
+package com.example.logger
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/app/src/main/res/drawable/ic_launcher_foreground.xml>
+android:fillColor="#bf95bc"/>
+    <path
+        android:pathData="M30,53.5A1.5,1.5 0,0 1,28.5 52V8a1.5,1.5 0,0 1,3 0V52A1.5,1.5 0,0 1,30 53.5Z"
+        android:fillColor="#bf95bc"/>
+    <path
+        android:pathData="M52,31.5H8a1.5,1.5 0,0 1,0 -3H52a1.5,1.5 0,0 1,0 3Z"
+        android:fillColor="#bf95bc"/>
+    <path
+        android:pathData="M46,20.5H36a1.5,1.5 0,0 1,0 -3H46a1.5,1.5 0,0 1,0 3Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M44,39.5H38a1.5,1.5 0,0 1,0 -3h6a1.5,1.5 0,0 1,0 3Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M44,45.5H38a1.5,1.5 0,0 1,0 -3h6a1.5,1.5 0,0 1,0 3Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M24,20.5H14a1.5,1.5 0,0 1,0 -3H24a1.5,1.5 0,0 1,0 3Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M19,25.5A1.5,1.5 0,0 1,17.5 24V14a1.5,1.5 0,0 1,3 0V24A1.5,1.5 0,0 1,19 25.5Z"
+        android:fillColor="#f29580"/>
+    <path
+</passage>
+<passage file_path=/logger/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
+</passage>
+<passage file_path=/logger/src/main/java/com/example/logger/FragmentLogger.kt>
+package com.example.logger
+
+import android.os.Bundle
+</passage>
+<passage file_path=/app/src/main/res/values/colors.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#689F38</color>
+    <color name="darker_green">#4CAF50</color>
+    <color name="darkest_green">#1B5E20</color>
+    <color name="text_color">#000000</color>
+    <color name="background">#defabb</color>
+</resources>
+</passage>
+<passage file_path=/app/src/main/res/drawable/ic_launcher_foreground.xml>
+<path
+        android:pathData="M19,25.5A1.5,1.5 0,0 1,17.5 24V14a1.5,1.5 0,0 1,3 0V24A1.5,1.5 0,0 1,19 25.5Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M22.536,46.036a1.5,1.5 0,0 1,-1.061 -0.44L14.4,38.525A1.5,1.5 0,0 1,16.525 36.4L23.6,43.475a1.5,1.5 0,0 1,-1.06 2.561Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M15.464,46.036a1.5,1.5 0,0 1,-1.06 -2.561L21.475,36.4A1.5,1.5 0,0 1,23.6 38.525L16.525,45.6A1.5,1.5 0,0 1,15.464 46.036Z"
+        android:fillColor="#f29580"/>
+    <path
+        android:pathData="M8,47.5A1.5,1.5 0,0 1,6.5 46V14A7.508,7.508 0,0 1,14 6.5H46a1.5,1.5 0,0 1,0 3H14A4.505,4.505 0,0 0,9.5 14V46A1.5,1.5 0,0 1,8 47.5Z"
+        android:fillColor="#ffafc5"/>
+  </group>
+</vector>
+</passage>
+<passage file_path=/app/src/main/res/drawable/ic_launcher_foreground.xml>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="60"
+    android:viewportHeight="60">
+  <group android:scaleX="0.61"
+      android:scaleY="0.61"
+      android:translateX="11.7"
+      android:translateY="11.7">
+    <path
+        android:pathData="M10,0L50,0A10,10 0,0 1,60 10L60,50A10,10 0,0 1,50 60L10,60A10,10 0,0 1,0 50L0,10A10,10 0,0 1,10 0z"
+        android:fillColor="#ffffff"/>
+    <path
+        android:pathData="M14,8L46,8A6,6 0,0 1,52 14L52,46A6,6 0,0 1,46 52L14,52A6,6 0,0 1,8 46L8,14A6,6 0,0 1,14 8z"
+        android:fillColor="#f1f3f4"/>
+    <path
+        android:pathData="M46,53.5H14A7.508,7.508 0,0 1,6.5 46V14A7.508,7.508 0,0 1,14 6.5H46A7.508,7.508 0,0 1,53.5 14V46A7.508,7.508 0,0 1,46 53.5ZM14,9.5A4.505,4.505 0,0 0,9.5 14V46A4.505,4.505 0,0 0,14 50.5H46A4.505,4.505 0,0 0,50.5 46V14A4.505,4.505 0,0 0,46 9.5Z"
+        android:fillColor="#bf95bc"/>
+    <path
+</passage>
+<passage file_path=/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<adaptive-icon xmlns:android="http://schemas.android.com/apk/res/android">
+    <background android:drawable="@color/ic_launcher_background"/>
+    <foreground android:drawable="@drawable/ic_launcher_foreground"/>
+</adaptive-icon>
+</passage>
+<passage file_path=/logger/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace = "com.example.logger"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+</passage>
+<passage file_path=/app/src/main/res/layout/activity_main.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.MainActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.google.android.material.appbar.AppBarLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                style="@style/MyActionBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleTextAppearance="@style/MyActionBarTitleText" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+</passage>
+<passage file_path=/app/src/main/res/values/themes.xml>
+<item name="android:elevation">4dp</item>
+    </style>
+
+    <style name="MyActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="android:background">#8BC34A</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:textColorHighlight">@android:color/black</item>
+    </style>
+
+    <style name="MyActionBarTitleText" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/black</item>
+    </style>
+
+
+
+    <style name="MyTextStyle" parent="@style/TextAppearance.AppCompat">
+    <item name="android:textSize">18sp</item>
+    <item name="android:textColor">#00FF00</item>
+    <item name="android:typeface">monospace</item>
+</style>
+
+
+</resources>
+</passage>
+<passage file_path=/app/src/main/res/navigation/nav_graph.xml>
+<fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.ex04.MenuFragment"
+        android:label="Menu"
+        tools:layout="@layout/fragment_menu">
+        <action
+            android:id="@+id/action_menuFragment_to_circlesFragment"
+            app:destination="@id/circlesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_primeNumbersFragment"
+            app:destination="@id/primeNumbersFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_thermometerFragment"
+            app:destination="@id/thermometerFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_speechModuleFragment"
+            app:destination="@id/speechModuleFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_calcFragment"
+            app:destination="@id/calcFragment" />
+
+    </fragment>
+</passage>
+<passage file_path=/thermometer/src/main/java/com/example/thermometer/ThermometerFragment.kt>
+override fun onItemSelected(
+                parent: AdapterView<*>, view: View?, position: Int, id: Long,
+            ) {
+                val unit = when (position) {
+                    0 -> "C"
+                    1 -> "K"
+                    2 -> "F"
+                    else -> "C"
+                }
+                Logger.i(message = "Temperature unit selected: $unit")
+                viewModel.temperatureUnit.value = unit
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                Logger.i(message = "No temperature unit selected")
+            }
+        }
+
+        val seasonAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            listOf("Summer", "Winter")
+        )
+        binding.spinnerSeason.adapter = seasonAdapter
+        binding.spinnerSeason.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+</passage>
+<passage file_path=/calc/src/main/res/layout/fragment_calc.xml>
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="16dp"
+    tools:context=".CalcFragment">
+
+    <EditText
+        android:id="@+id/inputNumber"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/MyEditText"
+        android:hint="Enter a number"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnFactorial"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ButtonStyle"
+        android:text="@string/btn_calculate_factorial" />
+</passage>
+<passage file_path=/app/src/main/res/values/ic_launcher_background.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="ic_launcher_background">#F5A9BD</color>
+</resources>
+</passage>
+<passage file_path=/calc/src/test/java/com/course/calc/ExampleUnitTest.kt>
+package com.course.calc
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/app/src/test/java/com/example/ex04/ExampleUnitTest.kt>
+package com.example.ex04
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesFragment.kt>
+class CirclesFragment : FragmentLogger() {
+
+    private var _binding: FragmentCirclesBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: CirclesViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        Logger.i(message = "CirclesFragment onCreateView")
+
+        _binding = FragmentCirclesBinding.inflate(inflater, container, false)
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Logger.i(message = "CirclesFragment onViewCreated")
+        setupLogging()
+        binding.buttonCheckIntersection.setOnClickListener {
+                try {
+                    viewModel.x1.value = binding.editTextX1.text.toString()
+                    viewModel.y1.value = binding.editTextY1.text.toString()
+</passage>
+<passage file_path=/thermometer/src/main/res/layout/fragment_thermometer.xml>
+<EditText
+                android:id="@+id/editTextTemperature"
+                style="@style/MyEditText"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/enter_temperature" />
+
+            <Button
+                android:id="@+id/buttonCheckTemperature"
+                style="@style/ButtonStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/check_temperature" />
+
+            <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceListItem" />
+        </LinearLayout>
+    </ScrollView>
+</layout>
+</passage>
+<passage file_path=/build.gradle.kts>
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    alias(libs.plugins.android.application) apply false
+    alias(libs.plugins.jetbrains.kotlin.android) apply false
+    alias(libs.plugins.android.library) apply false
+}
+</passage>
+<passage file_path=/primenumbers/src/main/res/values/strings.xml>
+<resources>
+    <string name="enter_a_number">Enter a number:</string>
+    <string name="grouping_order">Grouping order:</string>
+    <string name="check_primes">Check Primes</string>
+    <string-array name="grouping_order">
+        <item>Higher</item>
+        <item>Lower</item>
+    </string-array>
+</resources>
+</passage>
+<passage file_path=/calc/src/main/res/values/strings.xml>
+<resources>
+
+    <string name="btn_calculate_factorial">Calculate Factorial</string>
+    <string name="btn_calculate_square_cube_root">Calculate Square &amp; Cube Root</string>
+    <string name="btn_calculate_logarithms">Calculate Logarithms</string>
+    <string name="btn_calculate_square_cube">Calculate Square &amp; Cube</string>
+    <string name="btn_simplicity_test">Simplicity Test</string>
+    <string name="btn_run_all">Run All Calculations</string>
+    <string name="hint_enter_number">Enter a number</string>
+    <string name="error_message">An error has occurred. Please try again.</string>
+</resources>
+</passage>
+<passage file_path=/app/src/main/java/com/example/ex04/MenuFragment.kt>
+package com.example.ex04
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.ex04.databinding.FragmentMenuBinding
+import com.example.logger.Logger
+import com.example.logger.FragmentLogger
+</passage>
+<passage file_path=/thermometer/src/main/java/com/example/thermometer/ThermometerFragment.kt>
+viewModel.checkTemperature()
+        }
+
+        viewModel.result.observe(viewLifecycleOwner, Observer { result ->
+            binding.textViewResult.text = result
+        })
+    }
+
+    private fun setupLogging() {
+        Logger.i(message = "Setting up logging and binding for EditText fields")
+        binding.editTextTemperature.addLogging("temperatureInput")
+    }
+
+    private fun setupSpinners() {
+        Logger.i(message = "Setting up spinners in ThermometerFragment")
+
+        val unitAdapter = ArrayAdapter(
+            requireContext(),
+            android.R.layout.simple_spinner_dropdown_item,
+            listOf("Celsius", "Kelvin", "Fahrenheit")
+        )
+        binding.spinnerUnit.adapter = unitAdapter
+        binding.spinnerUnit.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>, view: View?, position: Int, id: Long,
+            ) {
+                val unit = when (position) {
+</passage>
+<passage file_path=/logger/src/androidTest/java/com/example/logger/ExampleInstrumentedTest.kt>
+package com.example.logger
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.logger.test", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/app/src/main/res/layout/activity_main.xml>
+</com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/nav_host_fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:defaultNavHost="true"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:navGraph="@navigation/nav_graph" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+</passage>
+<passage file_path=/app/src/main/java/com/example/ex04/MenuFragment.kt>
+class MenuFragment : FragmentLogger() {
+
+    private var _binding: FragmentMenuBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        Logger.i(message = "MenuFragment onCreateView")
+        _binding = FragmentMenuBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Logger.i(message = "MenuFragment onViewCreated")
+
+        binding.btnCircles.setOnClickListener {
+            Logger.i(message = "Circles button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_circlesFragment)
+        }
+        binding.btnPrime.setOnClickListener {
+            Logger.i(message = "Prime Numbers button tapped")
+</passage>
+<passage file_path=/logger/src/main/java/com/example/logger/FragmentLogger.kt>
+import androidx.fragment.app.Fragment
+
+open class FragmentLogger : Fragment() {
+    private val tagName = "${this::class.simpleName}Tag"
+    private val fragmentName = "${this::class.simpleName}"
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        Logger.i(tagName, "$fragmentName created")
+    }
+
+    override fun onViewStateRestored(savedInstanceState: Bundle?) {
+        super.onViewStateRestored(savedInstanceState)
+        Logger.i(tagName, "$fragmentName view state restored")
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Logger.i(tagName, "$fragmentName started")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Logger.i(tagName, "$fragmentName resumed")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Logger.i(tagName, "$fragmentName paused")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Logger.i(tagName, "$fragmentName stopped")
+    }
+</passage>
+<passage file_path=/app/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace = "com.example.ex04"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.example.ex04"
+        minSdk = 24
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersFragment.kt>
+binding.spinnerOrder.adapter= adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+}
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesViewModel.kt>
+val x2 = validateDoubleRad(x2.value)
+            val y2 = validateDoubleRad(y2.value)
+            val r2 = validateDoubleRad(r2.value, true)
+
+            if (x1 == null || y1 == null || r1 == null || x2 == null || y2 == null || r2 == null) {
+                _result.postValue("Couldn't parse a number. Please, try again")
+                Logger.e(message = "Invalid input detected")
+                return@launch
+            }
+            _result.postValue(circlesModel.checkIntersection(x1, y1, r1, x2, y2, r2))
+            Logger.i(message = "$this ended")
+        }
+    }
+
+    private fun validateDoubleRad(input: String?, isRad:Boolean=false): Double? {
+        val value = input?.toDoubleOrNull()
+        if (value == null || (isRad && value <= 0)) {
+            Logger.e(message = "Invalid value: $input")
+            return null
+        }
+        return value
+    }
+
+}
+</passage>
+<passage file_path=/app/src/main/res/navigation/nav_graph.xml>
+</fragment>
+
+    <fragment
+        android:id="@+id/circlesFragment"
+        android:name="com.example.circles.CirclesFragment"
+        android:label="Circles"
+        tools:layout="@layout/fragment_circles">
+        <action
+            android:id="@+id/action_circlesFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/primeNumbersFragment"
+        android:name="com.example.primenumbers.PrimeNumbersFragment"
+        android:label="Prime Numbers"
+        tools:layout="@layout/fragment_prime_numbers">
+        <action
+            android:id="@+id/action_primeNumbersFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+</passage>
+<passage file_path=/thermometer/src/main/java/com/example/thermometer/ThermometerViewModel.kt>
+"F" -> celsiusToFahrenheit(temperature)
+                    else -> temperature
+                }
+                Logger.d(message = "Temperature in unit $unit: $tempInUnit")
+
+                val advice = when {
+                    tempInUnit < comfortRangeStartUnit -> "Please, make it warmer by ${(comfortRangeStartUnit - tempInUnit).roundToInt()} degrees."
+                    tempInUnit > comfortRangeEndUnit -> "Please, make it cooler by ${(tempInUnit - comfortRangeEndUnit).roundToInt()} degrees."
+                    else -> "The temperature is comfortable."
+                }
+
+                Logger.i(message = "Final result: Temperature is $tempInUnit $unit. Comfort range: $comfortRangeStartUnit to $comfortRangeEndUnit $unit. Advice: $advice")
+
+                _result.postValue(
+                    "The temperature is $tempInUnit ${unit}.\nThe comfortable temperature is from $comfortRangeStartUnit to $comfortRangeEndUnit ${unit}.\n$advice"
+                )
+            }
+</passage>
+<passage file_path=/circles/src/main/res/layout/fragment_circles.xml>
+<TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceListItem" />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>
+</passage>
+<passage file_path=/speechmodule/src/test/java/com/example/speechmodule/ExampleUnitTest.kt>
+package com.example.speechmodule
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/calc/src/main/res/values/styles.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+            <item name="android:background">@drawable/button_background</item>
+            <item name="android:textColor">@color/text_color</item>
+            <item name="android:elevation">4dp</item>
+        </style>
+
+
+    <style name="MyEditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkest_green</item>
+        <item name="android:textColorHint">@color/darker_green</item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:inputType"> numberDecimal </item>
+    </style>
+    </resources>
+</passage>
+<passage file_path=/thermometer/src/main/res/layout/fragment_thermometer.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/outputModeText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/output_mode" />
+</passage>
+<passage file_path=/settings.gradle.kts>
+pluginManagement {
+    repositories {
+        google {
+            content {
+                includeGroupByRegex("com\\.android.*")
+                includeGroupByRegex("com\\.google.*")
+                includeGroupByRegex("androidx.*")
+            }
+        }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "Day5"
+include(":app")
+include(":circles")
+include(":primenumbers")
+include(":thermometer")
+include(":logger")
+include(":speechmodule")
+include(":calc")
+</passage>
+<passage file_path=/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleFragment.kt>
+class SpeechModuleFragment : FragmentLogger() {
+
+    private var _binding: FragmentSpeechModuleBinding? = null
+    private val binding get() =  _binding!!
+    private val viewModel: SpeechModuleViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        Logger.i(message = "SpeechModuleFragment onCreateView")
+        Logger.d(message = "ViewModel created")
+        _binding = FragmentSpeechModuleBinding.inflate(inflater,container,false)
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+        Logger.d(message = "ViewModel and lifecycleOwner set to binding")
+
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Logger.i(message = "SpeechModuleFragment onViewCreated")
+        setupLogging()
+    }
+
+    private fun setupLogging() {
+</passage>
+<passage file_path=/calc/src/androidTest/java/com/course/calc/ExampleInstrumentedTest.kt>
+package com.course.calc
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.course.calc.test", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/app/src/main/java/com/example/ex04/MenuFragment.kt>
+}
+        binding.btnPrime.setOnClickListener {
+            Logger.i(message = "Prime Numbers button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_primeNumbersFragment)
+        }
+        binding.btnThermometer.setOnClickListener {
+            Logger.i(message = "Thermometer button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_thermometerFragment)
+        }
+        binding.btnSpeechModule.setOnClickListener {
+            Logger.i(message = "Speech Module button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_speechModuleFragment)
+        }
+        binding.btnCalc.setOnClickListener {
+            Logger.i(message = "Calc button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_calcFragment)
+        }
+    }
+}
+</passage>
+<passage file_path=/circles/src/test/java/com/example/circles/ExampleUnitTest.kt>
+package com.example.circles
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleViewModel.kt>
+} else if (remainder >= 10) {
+                words.append(teens[remainder - 10])
+            } else {
+                words.append(units[remainder])
+            }
+            return words.toString().trim().replace(" ", "-")
+        }
+
+        var num = absNum
+        var i = 0
+        while (num > 0) {
+            val chunk = num % 1000
+            if (chunk > 0) {
+                val chunkWords = chunkToWords(chunk)
+                words.insert(0, "$chunkWords ${thousands[i]} ")
+            }
+            num /= 1000
+            i++
+        }
+
+        val result = words.toString().trim().replace(" ", "-").replace("-$", "")
+
+        return if (isNegative) "minus-$result" else result
+    }
+}
+</passage>
+<passage file_path=/thermometer/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace = "com.example.thermometer"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+</passage>
+<passage file_path=/app/src/main/res/layout/fragment_menu.xml>
+<Button
+            android:id="@+id/btnCalc"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/calc"
+            android:layout_marginTop="40dp"/>
+
+    </LinearLayout>
+</layout>
+</passage>
+<passage file_path=/thermometer/src/main/java/com/example/thermometer/ThermometerFragment.kt>
+class ThermometerFragment : FragmentLogger() {
+
+    private lateinit var binding: FragmentThermometerBinding
+    private val viewModel: ThermometerViewModel by viewModels()
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?,
+    ): View {
+        Logger.i(message = "ThermometerFragment created")
+        binding = FragmentThermometerBinding.inflate(inflater, container, false)
+        setupSpinners()
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Logger.i(message = "ThermometerFragment onViewCreated")
+        setupLogging()
+        binding.buttonCheckTemperature.setOnClickListener {
+            viewModel.inputTemperature.value = binding.editTextTemperature.text.toString()
+            viewModel.checkTemperature()
+        }
+
+        viewModel.result.observe(viewLifecycleOwner, Observer { result ->
+</passage>
+<passage file_path=/app/src/main/java/com/example/ex04/MainActivity.kt>
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+        setSupportActionBar(findViewById(R.id.toolbar))
+        Logger.i(message = "MainActivity created")
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        navController = navHostFragment.navController
+
+        val appBarConfiguration = AppBarConfiguration(navController.graph)
+        setupActionBarWithNavController(navController, appBarConfiguration)
+
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Logger.i(message = "MainActivity started")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Logger.i(message = "MainActivity resumed")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Logger.i(message = "MainActivity paused")
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersFragment.kt>
+class PrimeNumbersFragment : FragmentLogger() {
+
+    private var _binding: FragmentPrimeNumbersBinding? = null
+    private val binding get() = _binding!!
+    private val viewModel: PrimeNumbersViewModel by viewModels()
+
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        Logger.d(message = "PrimeNumbersFragment onCreateView")
+        _binding = FragmentPrimeNumbersBinding.inflate(inflater, container, false)
+
+        setupSpinner()
+        Logger.i(message = "PrimeNumbersFragment view created")
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        Logger.i(message = "PrimeNumbersFragment onViewCreated")
+        binding.buttonCheckPrime.setOnClickListener {
+            val input = binding.editTextNumber.text.toString()
+</passage>
+<passage file_path=/speechmodule/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+    id("kotlin-kapt")
+}
+
+android {
+    namespace = "com.example.speechmodule"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        viewBinding = true
+        dataBinding = true
+    }
+}
+</passage>
+<passage file_path=/thermometer/src/main/res/values/strings.xml>
+<resources>
+    <string name="enter_temperature">Enter temperature</string>
+    <string name="check_temperature">Check temperature</string>
+    <string name="output_mode">Output mode:</string>
+    <string name="season">Season:</string>
+</resources>
+</passage>
+<passage file_path=/calc/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace = "com.course.calc"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures{
+        viewBinding = true
+    }
+}
+</passage>
+<passage file_path=/circles/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace = "com.example.circles"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersFragment.kt>
+Logger.i(message = "PrimeNumbersFragment onViewCreated")
+        binding.buttonCheckPrime.setOnClickListener {
+            val input = binding.editTextNumber.text.toString()
+            val order = PrimeNumbersModel.Order.valueOf(binding.spinnerOrder.selectedItem.toString().uppercase())
+            try {
+                val number = input.toInt()
+                viewModel.analyzeNumber(number, order)
+            }
+            catch (e:NumberFormatException){
+                Toast.makeText(requireContext(),"Неверный ввод", Toast.LENGTH_LONG).show()
+            }
+        }
+
+        viewModel.result.observe(viewLifecycleOwner, Observer { result ->
+            binding.textViewResult.text = result
+        })
+    }
+
+    fun setupSpinner(){
+        val items = listOf("Higher", "Lower")
+        val adapter = ArrayAdapter(requireContext(),android.R.layout.simple_spinner_dropdown_item,items)
+        binding.spinnerOrder.adapter= adapter
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+</passage>
+<passage file_path=/primenumbers/build.gradle.kts>
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.jetbrains.kotlin.android)
+}
+
+android {
+    namespace = "com.example.primenumbers"
+    compileSdk = 34
+
+    defaultConfig {
+        minSdk = 24
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+        }
+    }
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    buildFeatures {
+        dataBinding = true
+    }
+}
+</passage>
+<passage file_path=/calc/src/main/res/layout/fragment_calc.xml>
+<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/resultTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingTop="16dp"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</LinearLayout>
+</passage>
+<passage file_path=/app/src/main/res/values/strings.xml>
+<resources>
+    <string name="app_name">Day05</string>
+    <string name="circles">Circles</string>
+    <string name="prime_numbers">Prime Numbers</string>
+    <string name="thermometer">Thermometer</string>
+    <string name="speech_module">Speech Module</string>
+    <string name="calc">Calculator</string>
+</resources>
+</passage>
+<passage file_path=/app/src/main/res/drawable/button_background.xml>
+<!-- res/drawable/button_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Button layer -->
+    <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/darker_green" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>
+</passage>
+<passage file_path=/app/src/androidTest/java/com/example/ex04/ExampleInstrumentedTest.kt>
+package com.example.ex04
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.ex01", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesViewModel.kt>
+class CirclesViewModel : ViewModel() {
+
+    init {
+        Logger.i(message = "CirclesViewModel initialized")
+    }
+
+    private val circlesModel = CirclesModel()
+    private val _result = MutableLiveData<String>()
+    val result:LiveData<String> get()  = _result
+
+    val x1 = MutableLiveData<String>()
+    val y1 = MutableLiveData<String>()
+    val r1 = MutableLiveData<String>()
+    val x2 = MutableLiveData<String>()
+    val y2 = MutableLiveData<String>()
+    val r2 = MutableLiveData<String>()
+
+    fun checkCircles()
+    {
+        viewModelScope.launch(Dispatchers.IO) {
+            Logger.i(message = "$this started")
+
+            val x1 = validateDoubleRad(x1.value)
+            val y1 = validateDoubleRad(y1.value)
+            val r1 = validateDoubleRad(r1.value, true)
+            val x2 = validateDoubleRad(x2.value)
+            val y2 = validateDoubleRad(y2.value)
+            val r2 = validateDoubleRad(r2.value, true)
+</passage>
+<passage file_path=/speechmodule/src/main/res/values/styles.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+
+    <style name="MyEditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkest_green</item>
+        <item name="android:textColorHint">@color/darker_green</item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:inputType"> number</item>
+    </style>
+
+</resources>
+</passage>
+<passage file_path=/logger/build.gradle.kts>
+dependencies {
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+}
+</passage>
+<passage file_path=/calc/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
+</passage>
+<passage file_path=/thermometer/src/test/java/com/example/thermometer/ExampleUnitTest.kt>
+package com.example.thermometer
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/primenumbers/src/main/res/layout/fragment_prime_numbers.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextNumber"
+                style="@style/MyEditText"
+                android:layout_marginBottom="16dp"
+                android:hint="@string/enter_a_number"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/grouping_order" />
+</passage>
+<passage file_path=/thermometer/src/main/res/values/styles.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+
+    <style name="MyEditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkest_green</item>
+        <item name="android:textColorHint">@color/darker_green</item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:inputType"> numberDecimal </item>
+    </style>
+
+</resources>
+</passage>
+<passage file_path=/primenumbers/src/test/java/com/example/primenumbers/ExampleUnitTest.kt>
+package com.example.primenumbers
+
+import org.junit.Test
+
+import org.junit.Assert.*
+
+/**
+ * Example local unit test, which will execute on the development machine (host).
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+class ExampleUnitTest {
+    @Test
+    fun addition_isCorrect() {
+        assertEquals(4, 2 + 2)
+    }
+}
+</passage>
+<passage file_path=/calc/src/main/res/values/colors.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#689F38</color>
+    <color name="darker_green">#4CAF50</color>
+    <color name="darkest_green">#1B5E20</color>
+    <color name="text_color">#000000</color>
+    <color name="background">#defabb</color>
+</resources>
+</passage>
+<passage file_path=/thermometer/src/main/java/com/example/thermometer/ThermometerViewModel.kt>
+"The temperature is $tempInUnit ${unit}.\nThe comfortable temperature is from $comfortRangeStartUnit to $comfortRangeEndUnit ${unit}.\n$advice"
+                )
+            }
+            catch (e:Exception){
+                Logger.e(message = "Error during temperature check: ${e.message}")
+            }
+            finally {
+                val endTime = System.currentTimeMillis()
+                Logger.i(message = "Temperature check completed at ${formatTimestamp(endTime)}, duration: ${endTime - startTime} ms")
+            }
+        }
+    }
+
+    private fun celsiusToKelvin(celsius: Double): Double {
+        val kelvin = celsius + 273.15
+        Logger.d(message = "Converted Celsius $celsius to Kelvin $kelvin")
+        return kelvin
+    }
+
+    private fun celsiusToFahrenheit(celsius: Double): Double {
+        val fahrenheit = (celsius * 9 / 5) + 32
+        Logger.d(message = "Converted Celsius $celsius to Fahrenheit $fahrenheit")
+        return fahrenheit
+    }
+</passage>
+<passage file_path=/speechmodule/src/androidTest/java/com/example/speechmodule/ExampleInstrumentedTest.kt>
+package com.example.speechmodule
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.speechmodule.test", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/primenumbers/src/main/res/values/styles.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+
+    <style name="MyEditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkest_green</item>
+        <item name="android:textColorHint">@color/darker_green</item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:inputType"> numberDecimal </item>
+    </style>
+
+</resources>
+</passage>
+<passage file_path=/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleViewModel.kt>
+class SpeechModuleViewModel : ViewModel() {
+
+    val inputNumber = MutableLiveData<String>()
+    private val _outputText = MutableLiveData<String>()
+    val outputText: MutableLiveData<String> get() = _outputText
+
+    init {
+        Logger.i(message = "SpeechModuleViewModel initialized")
+    }
+
+    fun onSubmitClicked() {
+        viewModelScope.launch(Dispatchers.IO) {
+            Logger.i(message = "$this started")
+            val numberString = inputNumber.value?.trim() ?: ""
+            Logger.d(message = "Submit button clicked with input: $numberString")
+            val number = numberString.toIntOrNull()
+
+            if (number != null && number in -1_000_000_000..1_000_000_000) {
+                val result = convertNumberToWords(number)
+                _outputText.postValue(result)
+                Logger.d(message = "Converted number to words: $result")
+            } else {
+                val errorMessage = if (number == null) {
+                    "Incorrect format, try again"
+</passage>
+<passage file_path=/circles/src/androidTest/java/com/example/circles/ExampleInstrumentedTest.kt>
+package com.example.circles
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.circles.test", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleFragment.kt>
+package com.example.speechmodule
+
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.viewModels
+import com.example.logger.FragmentLogger
+import com.example.speechmodule.databinding.FragmentSpeechModuleBinding
+import com.example.logger.Logger
+import com.example.logger.addLogging
+</passage>
+<passage file_path=/app/src/main/java/com/example/ex04/MainActivity.kt>
+package com.example.ex04
+
+import android.os.Bundle
+import android.text.Html
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.NavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.logger.Logger
+</passage>
+<passage file_path=/circles/src/main/res/values/styles.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/button_background</item>
+        <item name="android:textColor">@color/text_color</item>
+        <item name="android:elevation">4dp</item>
+    </style>
+
+
+    <style name="MyEditText" parent="@style/Widget.AppCompat.EditText">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkest_green</item>
+        <item name="android:textColorHint">@color/darker_green</item>
+        <item name="android:layout_width"> match_parent </item>
+        <item name="android:layout_height"> wrap_content </item>
+        <item name="android:inputType"> numberDecimal </item>
+    </style>
+
+</resources>
+</passage>
+<passage file_path=/thermometer/src/main/java/com/example/thermometer/ThermometerViewModel.kt>
+val (comfortRangeStart, comfortRangeEnd) = getComfortRange(seasonValue)
+                Logger.d(message = "Comfort range (Celsius): $comfortRangeStart to $comfortRangeEnd")
+
+                val (comfortRangeStartUnit, comfortRangeEndUnit) = when (unit) {
+                    "K" -> celsiusToKelvin(comfortRangeStart) to celsiusToKelvin(comfortRangeEnd)
+                    "F" -> celsiusToFahrenheit(comfortRangeStart) to celsiusToFahrenheit(
+                        comfortRangeEnd
+                    )
+
+                    else -> comfortRangeStart to comfortRangeEnd
+                }
+                Logger.d(message = "Comfort range (Celsius): $comfortRangeStart to $comfortRangeEnd")
+
+                val tempInUnit = when (unit) {
+                    "K" -> celsiusToKelvin(temperature)
+                    "F" -> celsiusToFahrenheit(temperature)
+                    else -> temperature
+                }
+                Logger.d(message = "Temperature in unit $unit: $tempInUnit")
+</passage>
+<passage file_path=/app/src/main/res/layout/fragment_menu.xml>
+<Button
+            android:id="@+id/btnPrime"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/prime_numbers"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/btnThermometer"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/thermometer"
+            android:layout_marginTop="40dp" />
+
+        <Button
+            android:id="@+id/btnSpeechModule"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/speech_module"
+            android:layout_marginTop="40dp" />
+</passage>
+<passage file_path=/primenumbers/src/main/res/values/colors.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#689F38</color>
+    <color name="darker_green">#4CAF50</color>
+    <color name="darkest_green">#1B5E20</color>
+    <color name="text_color">#000000</color>
+    <color name="background">#defabb</color>
+</resources>
+</passage>
+<passage file_path=/thermometer/src/androidTest/java/com/example/thermometer/ExampleInstrumentedTest.kt>
+package com.example.thermometer
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.thermometer.test", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/thermometer/src/main/res/values/colors.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#8BC34A</color>
+    <color name="darker_green">#4CAF50</color>
+    <color name="darkest_green">#1B5E20</color>
+    <color name="text_color">#000000</color>
+    <color name="background">#defabb</color>
+</resources>
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesModel.kt>
+abs(r1 - r2) >= distance -> {
+                Logger.i(message = "One circle is inside the other")
+                "One circle is inside the other"
+            }
+
+            else -> {
+                Logger.i(message = "The circles do not intersect")
+                "The circles do not intersect"
+            }
+        }
+    }
+}
+</passage>
+<passage file_path=/speechmodule/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesViewModel.kt>
+package com.example.circles
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.logger.Logger
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+</passage>
+<passage file_path=/calc/src/main/res/drawable/button_background.xml>
+<!-- res/drawable/button_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Button layer -->
+    <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/darker_green" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>
+</passage>
+<passage file_path=/circles/src/main/res/values/colors.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#689F38</color>
+    <color name="darker_green">#4CAF50</color>
+    <color name="darkest_green">#1B5E20</color>
+    <color name="text_color">#000000</color>
+    <color name="background">#defabb</color>
+</resources>
+</passage>
+<passage file_path=/speechmodule/src/main/res/values/colors.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="green">#689F38</color>
+    <color name="darker_green">#4CAF50</color>
+    <color name="darkest_green">#1B5E20</color>
+    <color name="text_color">#000000</color>
+    <color name="background">#defabb</color>
+</resources>
+</passage>
+<passage file_path=/speechmodule/src/main/res/drawable/button_background.xml>
+<!-- res/drawable/button_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Button layer -->
+    <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/darker_green" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>
+</passage>
+<passage file_path=/circles/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
+</passage>
+<passage file_path=/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleViewModel.kt>
+package com.example.speechmodule
+
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.logger.Logger
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlin.math.absoluteValue
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesModel.kt>
+class CirclesModel {
+
+
+    init {
+        Logger.i(message = "CirclesViewModel initialized")
+    }
+
+
+    fun checkIntersection(x1:Double, y1:Double, r1:Double, x2:Double, y2:Double, r2:Double):String {
+
+        Logger.i(message = "Inputs - x1: $x1, y1: $y1, r1: $r1, x2: $x2, y2: $y2, r2: $r2")
+
+        val distance = sqrt((x2 - x1).pow(2.0) + (y2 - y1).pow(2.0))
+        Logger.i(message = "Calculated distance: $distance")
+
+        return when {
+            abs(distance - (r1 + r2)) < 1e-9 -> {
+                Logger.i(message = "The circles coincide")
+                "The circles coincide"
+            }
+
+            distance <= r1 + r2 -> {
+                Logger.i(message = "The circles intersect")
+                "The circles intersect"
+            }
+
+            abs(r1 - r2) >= distance -> {
+                Logger.i(message = "One circle is inside the other")
+                "One circle is inside the other"
+            }
+
+            else -> {
+</passage>
+<passage file_path=/thermometer/src/main/res/layout/fragment_thermometer.xml>
+<Spinner
+                android:id="@+id/spinnerUnit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:popupBackground="#8BC34A" />
+
+            <TextView
+                android:id="@+id/SeasonText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/season"
+                android:layout_marginBottom="8dp"
+                android:paddingTop="8dp"
+                />
+
+            <Spinner
+                android:id="@+id/spinnerSeason"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:popupBackground="#8BC34A"
+                android:layout_marginBottom="16dp" />
+</passage>
+<passage file_path=/primenumbers/src/main/res/layout/fragment_prime_numbers.xml>
+<Spinner
+                android:id="@+id/spinnerOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:popupBackground="#8BC34A"
+                android:layout_marginBottom="24dp" />
+
+            <Button
+                android:id="@+id/buttonCheckPrime"
+                style="@style/ButtonStyle"
+                android:layout_marginBottom="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/check_primes" />
+
+            <TextView
+                android:id="@+id/textViewResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceListItem" />
+        </LinearLayout>
+    </ScrollView>
+</layout>
+</passage>
+<passage file_path=/primenumbers/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
+</passage>
+<passage file_path=/primenumbers/src/androidTest/java/com/example/primenumbers/ExampleInstrumentedTest.kt>
+package com.example.primenumbers
+
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.ext.junit.runners.AndroidJUnit4
+
+import org.junit.Test
+import org.junit.runner.RunWith
+
+import org.junit.Assert.*
+
+/**
+ * Instrumented test, which will execute on an Android device.
+ *
+ * See [testing documentation](http://d.android.com/tools/testing).
+ */
+@RunWith(AndroidJUnit4::class)
+class ExampleInstrumentedTest {
+    @Test
+    fun useAppContext() {
+        // Context of the app under test.
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.primenumbers.test", appContext.packageName)
+    }
+}
+</passage>
+<passage file_path=/circles/src/main/res/drawable/button_background.xml>
+<!-- res/drawable/button_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Button layer -->
+    <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/darker_green" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>
+</passage>
+<passage file_path=/app/build.gradle.kts>
+dependencies {
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":logger"))
+    implementation(project(":circles"))
+    implementation(project(":primenumbers"))
+    implementation(project(":thermometer"))
+    implementation(project(":speechmodule"))
+    implementation(project(":calc"))
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+}
+</passage>
+<passage file_path=/thermometer/src/main/res/drawable/button_background.xml>
+<!-- res/drawable/button_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Button layer -->
+    <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/darker_green" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>
+</passage>
+<passage file_path=/speechmodule/build.gradle.kts>
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(project(":logger"))
+}
+</passage>
+<passage file_path=/primenumbers/src/main/res/drawable/button_background.xml>
+<!-- res/drawable/button_background.xml -->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Shadow layer -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#80000000" /> <!-- Semi-transparent black for shadow -->
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+
+    <!-- Button layer -->
+    <item android:bottom="2dp" android:left="2dp" android:right="2dp" android:top="2dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/darker_green" />
+            <corners android:radius="50dp" />
+        </shape>
+    </item>
+</layer-list>
+</passage>
+<passage file_path=/calc/build.gradle.kts>
+dependencies {
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.fragment.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(project(":logger"))
+}
+</passage>
+<passage file_path=/circles/build.gradle.kts>
+dependencies {
+
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(project(":logger"))
+
+}
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersModel.kt>
+numbersList.add(numberStr.takeLast(i + 1).toInt())
+                }
+            }
+            Order.HIGHER ->
+                for (i in numberStr.indices) {
+                    numbersList.add(numberStr.take(i + 1).toInt())
+                }
+        }
+        return checkPrime(numbersList)
+    }
+
+
+    private fun checkPrime(numbersList:List<Int>):String{
+        val resultWithoutN = numbersList.map { it -> if (isPrime(it)) "$it - prime" else it.toString() }
+        val result = resultWithoutN.joinToString("\n")
+        Logger.i(message = "Prime numbers check complete")
+        return result
+    }
+
+}
+</passage>
+<passage file_path=/primenumbers/build.gradle.kts>
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(project(":logger"))
+}
+</passage>
+<passage file_path=/thermometer/src/main/AndroidManifest.xml>
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+</manifest>
+</passage>
+<passage file_path=/thermometer/build.gradle.kts>
+dependencies {
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.appcompat)
+    implementation(libs.material)
+    implementation(libs.androidx.activity)
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(project(":logger"))
+}
+</passage>
+<passage file_path=/logger/src/main/java/com/example/logger/Logger.kt>
+package com.example.logger
+
+import android.util.Log
+
+object Logger {
+    private const val DEFAULT_TAG = "AppLogger"
+
+    fun d(tag: String = DEFAULT_TAG, message: String) {
+        Log.d(tag, message)
+    }
+
+    fun i(tag: String = DEFAULT_TAG, message: String) {
+        Log.i(tag, message)
+    }
+
+    fun w(tag: String = DEFAULT_TAG, message: String) {
+        Log.w(tag, message)
+    }
+
+    fun e(tag: String = DEFAULT_TAG, message: String, throwable: Throwable? = null) {
+        Log.e(tag, message, throwable)
+    }
+
+    fun e(tag: String = DEFAULT_TAG, throwable: Throwable) {
+        Log.e(tag, throwable.message, throwable)
+    }
+}
+</passage>
+<passage file_path=/circles/src/main/java/com/example/circles/CirclesModel.kt>
+package com.example.circles
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+
+import kotlin.math.abs
+import kotlin.math.pow
+import kotlin.math.sqrt
+import com.example.logger.Logger
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersViewModel.kt>
+package com.example.primenumbers
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.example.logger.Logger
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+
+class PrimeNumbersViewModel : ViewModel() {
+    private val primeNumbersModel = PrimeNumbersModel()
+    private val _result = MutableLiveData<String>()
+    val result:LiveData<String> get() = _result
+
+    fun analyzeNumber(number:Int, order: PrimeNumbersModel.Order){
+    viewModelScope.launch(Dispatchers.IO) {
+        Logger.i(message = "$this started")
+        _result.postValue(primeNumbersModel.analyzeNumbers(number, order))
+        Logger.i(message = "$this ended")
+    }
+    }
+
+
+    init {
+        Logger.i(message = "PrimeNumbersViewModel initialized")
+    }
+
+
+
+
+
+}
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersModel.kt>
+class PrimeNumbersModel {
+
+    private fun isPrime(numberToCheck: Int): Boolean {
+        if (numberToCheck < 2) return false
+
+        val maxSqrtNumber = sqrt(numberToCheck.toDouble()).toInt()
+        for (i in 2..maxSqrtNumber) {
+            if (numberToCheck % i == 0) return false
+        }
+        return true
+    }
+
+    enum class Order {
+        LOWER, HIGHER
+    }
+
+
+    fun analyzeNumbers(number: Int, order: Order): String  {
+        Logger.i(message = "checkPrimeNumbers called (btn pushed)")
+        Logger.i(message = "Grouping order: $order")
+        Logger.i(message = "Numbers: $number")
+
+        val numberStr = number.toString()
+        val numbersList = mutableListOf<Int>()
+
+        when(order){
+            Order.LOWER -> {
+                for (i in numberStr.indices) {
+                    numbersList.add(numberStr.takeLast(i + 1).toInt())
+                }
+            }
+            Order.HIGHER ->
+                for (i in numberStr.indices) {
+</passage>
+<passage file_path=/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersModel.kt>
+package com.example.primenumbers
+
+import com.example.logger.Logger
+import kotlin.math.sqrt
+</passage>

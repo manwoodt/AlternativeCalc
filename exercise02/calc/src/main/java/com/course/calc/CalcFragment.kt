@@ -30,19 +30,39 @@ class CalcFragment : FragmentLogger() {
         super.onViewCreated(view, savedInstanceState)
         setupButtons()
 
+
+    }
+
+    private fun observeViewModel(){
         viewModel.results.observe(viewLifecycleOwner, Observer { results ->
             hideProgressBar()
             binding.resultTextView.text = results
         })
+        viewModel.buttonText.observe(this){
+            text ->
+            binding.btnFactorial.text = text
+            binding.btnSquareCubeRoot.text = text
+            binding.btnLogarithms.text = text
+            binding.btnSquareCube.text = text
+            binding.btnSimplicityTest.text = text
+            binding.btnRunAll.text = text
+        }
     }
 
     private fun setupButtons() {
 
         binding.btnFactorial.setOnClickListener {
             if (binding.inputNumber.text.toString().isNotEmpty()) {
-                showProgressBar()
-                viewModel.calculateFactorial(binding.inputNumber.text.toString().toBigInteger())
+                if (viewModel.buttonText.value == "Run") {
+                    showProgressBar()
+                    viewModel.startCalculation()
+                    viewModel.calculateFactorial(binding.inputNumber.text.toString().toBigInteger())
+                }
+                else {
+                    viewModel.cancelCalculation()
+                }
             }
+
         }
 
         binding.btnSquareCubeRoot.setOnClickListener {
@@ -76,6 +96,15 @@ class CalcFragment : FragmentLogger() {
             if (binding.inputNumber.text.toString().isNotEmpty()) {
                 showProgressBar()
                 viewModel.checkIsPrime(
+                    binding.inputNumber.text.toString().toBigInteger()
+                )
+            }
+        }
+
+        binding.btnRunAll.setOnClickListener {
+            if (binding.inputNumber.text.toString().isNotEmpty()) {
+                showProgressBar()
+                viewModel.calculateAll(
                     binding.inputNumber.text.toString().toBigInteger()
                 )
             }
