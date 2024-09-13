@@ -6,7 +6,6 @@ import androidx.lifecycle.ViewModel
 import com.example.logger.Logger
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
@@ -18,11 +17,14 @@ class CalcViewModel : ViewModel() {
     private val _results = MutableLiveData<String>()
     val results: LiveData<String> get() = _results
 
-    private var job: Job? = null
+    private var jobs: mapOf
 
-    private val _buttonText = MutableLiveData<String>()
-    val buttonText: LiveData<String> get() = _buttonText
+//    private val _buttonText = MutableLiveData<String>()
+//    val buttonText: LiveData<String> get() = _buttonText
 
+
+
+    // Calc operations
     fun calculateFactorial(number: BigInteger) {
         Logger.d(message = "calculateFactorial start")
         job = CoroutineScope(Dispatchers.Default).launch {
@@ -32,7 +34,7 @@ class CalcViewModel : ViewModel() {
             Logger.d(message = "$this end")
             withContext(Dispatchers.Main) {
                 Logger.d(message = "Factorial of result $number is $result")
-                _results.value = "Factorial of result $number is $result"
+                _results.postValue("Factorial of result $number is $result")
             }
         }
     }
@@ -144,12 +146,15 @@ class CalcViewModel : ViewModel() {
             """.trimIndent()
 
             withContext(Dispatchers.Main) {
-                _results.value = results
+                _results.postValue(results)
             }
         }
     }
 
+    // extra func
+
     fun cancelCalculation() {
+        Logger.d(message = "cancel job")
         job?.cancel()
         _buttonText.value = "Run"
     }

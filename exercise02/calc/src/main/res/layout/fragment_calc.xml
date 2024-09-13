@@ -11,67 +11,149 @@
 
     <EditText
         android:id="@+id/inputNumber"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         style="@style/MyEditText"
         android:hint="Enter a number"
         android:inputType="number" />
 
-    <Button
-        android:id="@+id/btnFactorial"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center_horizontal"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/ButtonStyle"
-        android:text="@string/btn_calculate_factorial" />
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
 
-    <Button
-        android:id="@+id/btnSquareCubeRoot"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        style="@style/ButtonStyle"
-        android:text="@string/btn_calculate_square_cube_root" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyTextView"
+            android:text="@string/btn_calculate_factorial"
+            android:layout_gravity="center_vertical" />
 
-    <Button
-        android:id="@+id/btnLogarithms"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        style="@style/ButtonStyle"
-        android:text="@string/btn_calculate_logarithms" />
+        <Button
+            android:id="@+id/btnFactorial"
+            android:text="@string/run"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/ButtonStyle" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btnSquareCube"
-        android:layout_marginTop="8dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        style="@style/ButtonStyle"
-        android:text="@string/btn_calculate_square_cube" />
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
 
-    <Button
-        android:id="@+id/btnSimplicityTest"
-        android:layout_marginTop="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        style="@style/ButtonStyle"
-        android:text="@string/btn_simplicity_test" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyTextView"
+            android:text="@string/btn_calculate_square_cube_root"
+            android:layout_gravity="center_vertical" />
 
-    <Button
-        android:id="@+id/btnRunAll"
-        android:layout_marginTop="20dp"
+        <Button
+            android:id="@+id/btnSquareCubeRoot"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run"
+            style="@style/ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="@color/darkest_green"
-        android:backgroundTint="@color/green"
-        android:text="@string/btn_run_all" />
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyTextView"
+            android:text="@string/btn_calculate_logarithms"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/btnLogarithms"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run"
+            style="@style/ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyTextView"
+            android:text="@string/btn_calculate_square_cube"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/btnSquareCube"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run"
+            style="@style/ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyTextView"
+            android:text="@string/btn_simplicity_test"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/btnSimplicityTest"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/run"
+            style="@style/ButtonStyle" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/MyTextView"
+            android:text="@string/btn_run_all"
+            android:layout_gravity="center_vertical" />
+
+        <Button
+            android:id="@+id/btnRunAll"
+            android:layout_marginLeft="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/darkest_green"
+            android:backgroundTint="@color/darkest_green"
+            android:text="@string/run" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -80,7 +162,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <ProgressBar
                 android:id="@+id/progressBar"
@@ -99,6 +181,5 @@
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>
-
 
 </LinearLayout>

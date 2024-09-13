@@ -8,4 +8,6 @@
     <string name="btn_run_all">Run All Calculations</string>
     <string name="hint_enter_number">Enter a number</string>
     <string name="error_message">An error has occurred. Please try again.</string>
+    <string name="run">run</string>
+
 </resources>

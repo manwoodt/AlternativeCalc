@@ -15,4 +15,11 @@
         <item name="android:layout_height"> wrap_content </item>
         <item name="android:inputType"> numberDecimal </item>
     </style>
+
+    <style name="MyTextView" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/darkest_green</item>
+        <item name="android:textColorHint">@color/darker_green</item>
+    </style>
+
     </resources>

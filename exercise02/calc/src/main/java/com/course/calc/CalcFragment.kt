@@ -29,7 +29,7 @@ class CalcFragment : FragmentLogger() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupButtons()
-
+        observeViewModel()
 
     }
 
@@ -38,7 +38,7 @@ class CalcFragment : FragmentLogger() {
             hideProgressBar()
             binding.resultTextView.text = results
         })
-        viewModel.buttonText.observe(this){
+        viewModel.buttonText.observe(viewLifecycleOwner, Observer{
             text ->
             binding.btnFactorial.text = text
             binding.btnSquareCubeRoot.text = text
@@ -46,7 +46,7 @@ class CalcFragment : FragmentLogger() {
             binding.btnSquareCube.text = text
             binding.btnSimplicityTest.text = text
             binding.btnRunAll.text = text
-        }
+        })
     }
 
     private fun setupButtons() {
@@ -60,6 +60,7 @@ class CalcFragment : FragmentLogger() {
                 }
                 else {
                     viewModel.cancelCalculation()
+                    hideProgressBar()
                 }
             }
 
