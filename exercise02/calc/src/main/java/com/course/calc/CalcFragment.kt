@@ -33,84 +33,64 @@ class CalcFragment : FragmentLogger() {
 
     }
 
-    private fun observeViewModel(){
+    private fun observeViewModel() {
         viewModel.results.observe(viewLifecycleOwner, Observer { results ->
             hideProgressBar()
             binding.resultTextView.text = results
         })
-        viewModel.buttonText.observe(viewLifecycleOwner, Observer{
-            text ->
-            binding.btnFactorial.text = text
-            binding.btnSquareCubeRoot.text = text
-            binding.btnLogarithms.text = text
-            binding.btnSquareCube.text = text
-            binding.btnSimplicityTest.text = text
-            binding.btnRunAll.text = text
+
+        viewModel.buttonText.observe(viewLifecycleOwner, Observer { buttonTexts ->
+            binding.btnFactorial.text = buttonTexts[Operations.FACTORIAL]
+            binding.btnSquareCubeRoot.text = buttonTexts[Operations.SQUARE_CUBE_ROOT]
+            binding.btnLogarithms.text = buttonTexts[Operations.LOGARITHMS]
+            binding.btnSquareCube.text = buttonTexts[Operations.SQUARE_CUBE]
+            binding.btnSimplicityTest.text = buttonTexts[Operations.SIMPLICITY_TEST]
+            binding.btnRunAll.text = buttonTexts[Operations.RUN_ALL]
         })
     }
 
     private fun setupButtons() {
 
-        binding.btnFactorial.setOnClickListener {
-            if (binding.inputNumber.text.toString().isNotEmpty()) {
-                if (viewModel.buttonText.value == "Run") {
-                    showProgressBar()
-                    viewModel.startCalculation()
-                    viewModel.calculateFactorial(binding.inputNumber.text.toString().toBigInteger())
+
+        binding.btnFactorial.setOnClickListener { handleButtonClick(Operations.FACTORIAL) }
+        binding.btnSquareCubeRoot.setOnClickListener { handleButtonClick(Operations.SQUARE_CUBE_ROOT) }
+        binding.btnLogarithms.setOnClickListener { handleButtonClick(Operations.LOGARITHMS) }
+        binding.btnSquareCube.setOnClickListener { handleButtonClick(Operations.SQUARE_CUBE) }
+        binding.btnSimplicityTest.setOnClickListener { handleButtonClick(Operations.SIMPLICITY_TEST) }
+
+
+//        binding.btnRunAll.setOnClickListener {
+//            if (binding.inputNumber.text.toString().isNotEmpty()) {
+//                showProgressBar()
+//                viewModel.calculateAll(
+//                    binding.inputNumber.text.toString().toBigInteger()
+//                )
+//            }
+//        }
+
+    }
+
+
+    private fun handleButtonClick(operation: Operations) {
+        if (binding.inputNumber.text.toString().isNotEmpty()) {
+            showProgressBar()
+            val number = binding.inputNumber.text.toString().toBigInteger()
+            if (viewModel.buttonText.value?.get(operation) == "RUN") {
+                when (operation) {
+                    Operations.FACTORIAL -> viewModel.calculateFactorial(number)
+                    Operations.SQUARE_CUBE_ROOT -> viewModel.calculateSquareAndCubeRoot(number)
+                    Operations.LOGARITHMS -> viewModel.calculateLogarithms(number)
+                    Operations.SQUARE_CUBE -> viewModel.calculateSquareAndCube(number)
+                    Operations.SIMPLICITY_TEST -> viewModel.checkIsPrime(number)
+                    Operations.RUN_ALL -> viewModel.checkIsPrime(number) // change
                 }
-                else {
-                    viewModel.cancelCalculation()
-                    hideProgressBar()
-                }
+            } else {
+                viewModel.cancelCalculation(operation)
+                hideProgressBar()
             }
-
+        } else {
+            hideProgressBar()
         }
-
-        binding.btnSquareCubeRoot.setOnClickListener {
-            if (binding.inputNumber.text.toString().isNotEmpty()) {
-                showProgressBar()
-                viewModel.calculateSquareAndCubeRoot(
-                    binding.inputNumber.text.toString().toBigInteger()
-                )
-            }
-        }
-
-        binding.btnLogarithms.setOnClickListener {
-            if (binding.inputNumber.text.toString().isNotEmpty()) {
-                showProgressBar()
-                viewModel.calculateLogarithms(
-                    binding.inputNumber.text.toString().toBigInteger()
-                )
-            }
-        }
-
-        binding.btnSquareCube.setOnClickListener {
-            if (binding.inputNumber.text.toString().isNotEmpty()) {
-                showProgressBar()
-                viewModel.calculateSquareAndCube(
-                    binding.inputNumber.text.toString().toBigInteger()
-                )
-            }
-        }
-
-        binding.btnSimplicityTest.setOnClickListener {
-            if (binding.inputNumber.text.toString().isNotEmpty()) {
-                showProgressBar()
-                viewModel.checkIsPrime(
-                    binding.inputNumber.text.toString().toBigInteger()
-                )
-            }
-        }
-
-        binding.btnRunAll.setOnClickListener {
-            if (binding.inputNumber.text.toString().isNotEmpty()) {
-                showProgressBar()
-                viewModel.calculateAll(
-                    binding.inputNumber.text.toString().toBigInteger()
-                )
-            }
-        }
-
     }
 
     private fun showProgressBar() {
