@@ -4,6 +4,7 @@ import android.media.VolumeShaper
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.logger.Logger
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
@@ -31,11 +32,14 @@ class CalcViewModel : ViewModel() {
 
     private fun launchJob(operation: Operations, doingJob: suspend () -> Unit) {
         jobs[operation]?.cancel() // Отмена предыдущей операции, если она есть
+
         _buttonText.value =
             _buttonText.value?.mapValues { if (it.key == operation) "CANCEL" else it.value }
         // обновление _buttonText через создание новый map, mutableMap не подходит,
         // потому что изменения внутри нее не будут отправляться наблюдателям
-        val job = CoroutineScope(Dispatchers.Default).launch {
+
+       // val job = CoroutineScope(Dispatchers.Default).launch {
+        val job = viewModelScope.launch {
             try {
                 Logger.d(message = "$this start")
                 doingJob()
@@ -147,31 +151,40 @@ class CalcViewModel : ViewModel() {
         return true
     }
 
-//    fun calculateAll(number: BigInteger) {
-//        launchJob(Operations.RUN_ALL) {
-//            val factorialDeferred = async { factorial(number) }
-//            val squareRootDeferred = async { sqrt(number.toDouble()) }
-//            val cubeRootDeferred = async { cbrt(number.toDouble()) }
-//            val logBase10Deferred = async { log10(number.toDouble()) }
-//            val naturalLogDeferred = async { ln(number.toDouble()) }
-//            val squareDeferred = async { number.multiply(number) }
-//            val cubeDeferred = async { squareDeferred.await().multiply(number) }
-//
-//            val results = """
-//                Factorial: ${factorialDeferred.await()}
-//                Square root: ${squareRootDeferred.await()}
-//                Cube root: ${cubeRootDeferred.await()}
-//                Log10: ${logBase10Deferred.await()}
-//                Ln: ${naturalLogDeferred.await()}
-//                Square: ${squareDeferred.await()}
-//                Cube: ${cubeDeferred.await()}
-//            """.trimIndent()
-//
-//            withContext(Dispatchers.Main) {
-//                _results.postValue(results)
-//            }
-//        }
-//    }
+    fun calculateAll(number: BigInteger) {
+      //  CoroutineScope(Dispatchers.Default).launch {
+       //     launchJob(Operations.RUN_ALL) {
+        viewModelScope.launch {
+                val factorialDeferred = async { factorial(number) }
+                val squareRootDeferred = async { sqrt(number.toDouble()) }
+                val cubeRootDeferred = async { cbrt(number.toDouble()) }
+                val logBase10Deferred = async { log10(number.toDouble()) }
+                val naturalLogDeferred = async { ln(number.toDouble()) }
+                val squareDeferred = async { number.multiply(number) }
+                val cubeDeferred = async { squareDeferred.await().multiply(number) }
+            val isPrimeDeferred = async { isPrime(number) }
+
+            try {
+                val results = """
+                Factorial: ${factorialDeferred.await()}
+                Square root: ${squareRootDeferred.await()}
+                Cube root: ${cubeRootDeferred.await()}
+                Log10: ${logBase10Deferred.await()}
+                Ln: ${naturalLogDeferred.await()}
+                Square: ${squareDeferred.await()}
+                Cube: ${cubeDeferred.await()}
+                IsPrime: ${isPrimeDeferred.await()}
+            """.trimIndent()
+                withContext(Dispatchers.Main) {
+                    _results.value = results
+                }
+            }
+            catch (e:CancellationException){
+                Logger.i(message = "Calculations were canceled : ${e.message}")
+            }
+            }
+      //  }
+    }
 
     // extra func
 

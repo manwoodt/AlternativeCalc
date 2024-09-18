@@ -57,16 +57,7 @@ class CalcFragment : FragmentLogger() {
         binding.btnLogarithms.setOnClickListener { handleButtonClick(Operations.LOGARITHMS) }
         binding.btnSquareCube.setOnClickListener { handleButtonClick(Operations.SQUARE_CUBE) }
         binding.btnSimplicityTest.setOnClickListener { handleButtonClick(Operations.SIMPLICITY_TEST) }
-
-
-//        binding.btnRunAll.setOnClickListener {
-//            if (binding.inputNumber.text.toString().isNotEmpty()) {
-//                showProgressBar()
-//                viewModel.calculateAll(
-//                    binding.inputNumber.text.toString().toBigInteger()
-//                )
-//            }
-//        }
+        binding.btnRunAll.setOnClickListener { handleButtonClick(Operations.RUN_ALL) }
 
     }
 
@@ -82,7 +73,7 @@ class CalcFragment : FragmentLogger() {
                     Operations.LOGARITHMS -> viewModel.calculateLogarithms(number)
                     Operations.SQUARE_CUBE -> viewModel.calculateSquareAndCube(number)
                     Operations.SIMPLICITY_TEST -> viewModel.checkIsPrime(number)
-                    Operations.RUN_ALL -> viewModel.checkIsPrime(number) // change
+                    Operations.RUN_ALL -> viewModel.calculateAll(number) // change
                 }
             } else {
                 viewModel.cancelCalculation(operation)
