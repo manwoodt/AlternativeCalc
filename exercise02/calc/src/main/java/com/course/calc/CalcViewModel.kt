@@ -11,6 +11,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.async
+import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.ensureActive
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -33,12 +34,11 @@ class CalcViewModel : ViewModel() {
     private fun launchJob(operation: Operations, doingJob: suspend () -> Unit) {
         jobs[operation]?.cancel() // Отмена предыдущей операции, если она есть
 
-        _buttonText.value =
-            _buttonText.value?.mapValues { if (it.key == operation) "CANCEL" else it.value }
+        updateButtonState(operation, "CANCEL")
         // обновление _buttonText через создание новый map, mutableMap не подходит,
         // потому что изменения внутри нее не будут отправляться наблюдателям
 
-       // val job = CoroutineScope(Dispatchers.Default).launch {
+        // val job = CoroutineScope(Dispatchers.Default).launch {
         val job = viewModelScope.launch {
             try {
                 Logger.d(message = "$this start")
@@ -48,15 +48,14 @@ class CalcViewModel : ViewModel() {
                 Logger.e(message = "$operation cancelled")
             } catch (e: Exception) {
                 Logger.e(message = "Error in $operation: ${e.message}")
-                withContext(Dispatchers.Main) {
+              //  withContext(Dispatchers.Main) {
                     _results.value = "Error: ${e.message}"
-                }
+             //   }
             } finally {
-                Logger.e(message = "Text = RUN")
-                withContext(Dispatchers.Main) {
-                    _buttonText.value =
-                        _buttonText.value?.mapValues { if (it.key == operation) "RUN" else it.value }
-                }
+                Logger.d(message = "Text = RUN")
+             //   withContext(Dispatchers.Main) {
+                    updateButtonState(operation, "RUN")
+            //    }
             }
         }
         jobs[operation] = job
@@ -66,11 +65,11 @@ class CalcViewModel : ViewModel() {
     fun calculateFactorial(number: BigInteger) {
         Logger.d(message = "calculateFactorial start")
         launchJob(Operations.FACTORIAL) {
-            val result = factorial(number)
-            withContext(Dispatchers.Main) {
-                Logger.d(message = "Factorial of result $number is $result")
-                _results.postValue("Factorial of result $number is $result")
-            }
+            val result = withContext(Dispatchers.Default) { factorial(number) }
+            //   withContext(Dispatchers.Main) {
+            Logger.d(message = "Factorial of result $number is $result")
+            _results.postValue("Factorial of result $number is $result")
+
         }
     }
 
@@ -91,10 +90,11 @@ class CalcViewModel : ViewModel() {
             val squareRoot = sqrt(number.toDouble())
             val cubeRoot = cbrt(number.toDouble())
 
-            withContext(Dispatchers.Main) {
+         //   withContext(Dispatchers.Main) {
                 Logger.d(message = "Square root: $squareRoot, Cube root: $cubeRoot")
-                _results.value = "Square root: $squareRoot, Cube root: $cubeRoot"
-            }
+            _results.postValue("Square root: $squareRoot, Cube root: $cubeRoot")
+             //   _results.value = "Square root: $squareRoot, Cube root: $cubeRoot"
+       //     }
         }
     }
 
@@ -103,10 +103,11 @@ class CalcViewModel : ViewModel() {
         launchJob(Operations.LOGARITHMS) {
             val logBase10 = log10(number.toDouble())
             val naturalLog = ln(number.toDouble())
-            withContext(Dispatchers.Main) {
+        //    withContext(Dispatchers.Main) {
                 Logger.d(message = "Log10: $logBase10, Ln: $naturalLog")
-                _results.value = "Log10: $logBase10, Ln: $naturalLog"
-            }
+          //      _results.value = "Log10: $logBase10, Ln: $naturalLog"
+            _results.postValue("Log10: $logBase10, Ln: $naturalLog")
+        //    }
         }
     }
 
@@ -116,10 +117,11 @@ class CalcViewModel : ViewModel() {
             val square = number.multiply(number) // Используем BigInteger для умножения
             val cube = square.multiply(number) // cube = square * number
 
-            withContext(Dispatchers.Main) {
+           // withContext(Dispatchers.Main) {
                 Logger.d(message = "Square: $square, Cube: $cube")
-                _results.value = "Square: $square, Cube: $cube"
-            }
+              //  _results.value = "Square: $square, Cube: $cube"
+            _results.postValue("Square: $square, Cube: $cube")
+         //   }
         }
     }
 
@@ -130,7 +132,9 @@ class CalcViewModel : ViewModel() {
 
             withContext(Dispatchers.Main) {
                 Logger.d(message = "Number $number is $isPrime")
+                _results.postValue("Number $number is $isPrime")
                 _results.value = "Number $number is $isPrime"
+                //     }
             }
         }
     }
@@ -151,40 +155,84 @@ class CalcViewModel : ViewModel() {
         return true
     }
 
-    fun calculateAll(number: BigInteger) {
-      //  CoroutineScope(Dispatchers.Default).launch {
-       //     launchJob(Operations.RUN_ALL) {
-        viewModelScope.launch {
-                val factorialDeferred = async { factorial(number) }
-                val squareRootDeferred = async { sqrt(number.toDouble()) }
-                val cubeRootDeferred = async { cbrt(number.toDouble()) }
-                val logBase10Deferred = async { log10(number.toDouble()) }
-                val naturalLogDeferred = async { ln(number.toDouble()) }
-                val squareDeferred = async { number.multiply(number) }
-                val cubeDeferred = async { squareDeferred.await().multiply(number) }
-            val isPrimeDeferred = async { isPrime(number) }
+//    fun calculateAll(number: BigInteger) {
+////        //  CoroutineScope(Dispatchers.Default).launch {
+////        //     launchJob(Operations.RUN_ALL) {
+////        viewModelScope.launch {
+////            val factorialDeferred = async { factorial(number) }
+////            val squareRootDeferred = async { sqrt(number.toDouble()) }
+////            val cubeRootDeferred = async { cbrt(number.toDouble()) }
+////            val logBase10Deferred = async { log10(number.toDouble()) }
+////            val naturalLogDeferred = async { ln(number.toDouble()) }
+////            val squareDeferred = async { number.multiply(number) }
+////            val cubeDeferred = async { squareDeferred.await().multiply(number) }
+////            val isPrimeDeferred = async { isPrime(number) }
+////
+////            try {
+////                val results = """
+////                Factorial: ${factorialDeferred.await()}
+////                Square root: ${squareRootDeferred.await()}
+////                Cube root: ${cubeRootDeferred.await()}
+////                Log10: ${logBase10Deferred.await()}
+////                Ln: ${naturalLogDeferred.await()}
+////                Square: ${squareDeferred.await()}
+////                Cube: ${cubeDeferred.await()}
+////                IsPrime: ${isPrimeDeferred.await()}
+////            """.trimIndent()
+////                withContext(Dispatchers.Main) {
+////                    _results.value = results
+////                }
+////            } catch (e: CancellationException) {
+////                Logger.i(message = "Calculations were canceled : ${e.message}")
+////            }
+////        }
+////        //  }
+////    }
 
+
+    fun calculateAll(number: BigInteger) {
+        launchJob(Operations.RUN_ALL) {
             try {
-                val results = """
-                Factorial: ${factorialDeferred.await()}
-                Square root: ${squareRootDeferred.await()}
-                Cube root: ${cubeRootDeferred.await()}
-                Log10: ${logBase10Deferred.await()}
-                Ln: ${naturalLogDeferred.await()}
-                Square: ${squareDeferred.await()}
-                Cube: ${cubeDeferred.await()}
-                IsPrime: ${isPrimeDeferred.await()}
-            """.trimIndent()
+                // Переносим тяжелые операции в фон
+                val results = withContext(Dispatchers.Default) {
+                    val factorial = factorial(number)
+                    val squareRoot = sqrt(number.toDouble())
+                    val cubeRoot = cbrt(number.toDouble())
+                    val logBase10 = log10(number.toDouble())
+                    val naturalLog = ln(number.toDouble())
+                    val square = number.multiply(number)
+                    val cube = square.multiply(number)
+                    val isPrime = isPrime(number)
+
+                    """
+                    Factorial: $factorial
+                    Square root: $squareRoot
+                    Cube root: $cubeRoot
+                    Log10: $logBase10
+                    Ln: $naturalLog
+                    Square: $square
+                    Cube: $cube
+                    IsPrime: $isPrime
+                """.trimIndent()
+                }
+
+                // Обновляем UI на основном потоке
                 withContext(Dispatchers.Main) {
                     _results.value = results
                 }
+            } catch (e: CancellationException) {
+                // Обработка отмены задачи
+                Logger.i(message = "Calculations were canceled: ${e.message}")
+                withContext(Dispatchers.Main) {
+                    _results.value = "Calculation canceled"
+                }
             }
-            catch (e:CancellationException){
-                Logger.i(message = "Calculations were canceled : ${e.message}")
-            }
-            }
-      //  }
+        }
     }
+
+
+
+
 
     // extra func
 
@@ -192,11 +240,15 @@ class CalcViewModel : ViewModel() {
         Logger.d(message = "cancel $operation job")
         jobs[operation]?.cancel()
         jobs[operation] = null
-        _buttonText.value =
-            _buttonText.value?.mapValues {
-                if (it.key == operation) "RUN" else it.value
-            }
+        updateButtonState(operation, "RUN")
     }
+
+    private fun updateButtonState(operation: Operations, newState: String) {
+        _buttonText.value = _buttonText.value?.mapValues {
+            if (it.key == operation) newState else it.value
+        }
+    }
+
 
 
     override fun onCleared() {
