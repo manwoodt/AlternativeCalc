@@ -47,5 +47,9 @@ class MenuFragment : FragmentLogger() {
             Logger.i(message = "Calc button tapped")
             findNavController().navigate(R.id.action_menuFragment_to_calcFragment)
         }
+        binding.btnCoroutines.setOnClickListener {
+            Logger.i(message = "Coroutines button tapped")
+            findNavController().navigate(R.id.action_menuFragment_to_coroutineFragment)
+        }
     }
 }

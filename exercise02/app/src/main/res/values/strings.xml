@@ -5,4 +5,5 @@
     <string name="thermometer">Thermometer</string>
     <string name="speech_module">Speech Module</string>
     <string name="calc">Calculator</string>
+    <string name="coroutines">Coroutines</string>
 </resources>

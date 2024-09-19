@@ -1,0 +1,8 @@
+<resources>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="viewData">Data will appear here</string>
+    <string name="load_data">Load data</string>
+    <string name="freeze_ui">Freeze UI</string>
+    <string name="cancel_loading">Cancel loading</string>
+</resources>

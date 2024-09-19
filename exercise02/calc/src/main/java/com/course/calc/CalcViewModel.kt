@@ -48,16 +48,17 @@ class CalcViewModel : ViewModel() {
                 Logger.e(message = "$operation cancelled")
             } catch (e: Exception) {
                 Logger.e(message = "Error in $operation: ${e.message}")
-                  withContext(Dispatchers.Main) {
-                _results.value = "Error: ${e.message}"
-                   }
+                withContext(Dispatchers.Main) {
+                    _results.value = "Error: ${e.message}"
+                }
             } finally {
                 Logger.d(message = "Text = RUN")
-                   withContext(Dispatchers.Main) {
-                updateButtonState(operation, "RUN")
-                    }
+                withContext(Dispatchers.Main) {
+                    updateButtonState(operation, "RUN")
+                }
             }
         }
+
         jobs[operation] = job
     }
 
@@ -66,9 +67,9 @@ class CalcViewModel : ViewModel() {
         Logger.d(message = "calculateFactorial start")
         launchJob(Operations.FACTORIAL) {
             val result = withContext(Dispatchers.Default) { factorial(number) }
-              withContext(Dispatchers.Main) {
-            Logger.d(message = "Factorial of result $number is $result")
-                  _results.value ="Factorial of result $number is $result"
+            withContext(Dispatchers.Main) {
+                Logger.d(message = "Factorial of result $number is $result")
+                _results.value = "Factorial of result $number is $result"
             }
         }
     }
@@ -89,10 +90,10 @@ class CalcViewModel : ViewModel() {
         launchJob(Operations.SQUARE_CUBE_ROOT) {
             val squareRoot = sqrt(number.toDouble())
             val cubeRoot = cbrt(number.toDouble())
-               withContext(Dispatchers.Main) {
-            Logger.d(message = "Square root: $squareRoot, Cube root: $cubeRoot")
-               _results.value = "Square root: $squareRoot, Cube root: $cubeRoot"
-                 }
+            withContext(Dispatchers.Main) {
+                Logger.d(message = "Square root: $squareRoot, Cube root: $cubeRoot")
+                _results.value = "Square root: $squareRoot, Cube root: $cubeRoot"
+            }
         }
     }
 
@@ -129,12 +130,11 @@ class CalcViewModel : ViewModel() {
                     val isPrime = isPrime(number)
 
                     withContext(Dispatchers.Main) {
-                        Logger.d(message = "Number $number is $isPrime")
-                        _results.value = "Number $number is $isPrime"
+                        Logger.d(message = "Number $number is prime: $isPrime")
+                        _results.value = "Number $number is prime:$isPrime"
                     }
                 }
-            }
-            catch (e:TimeoutCancellationException){
+            } catch (e: TimeoutCancellationException) {
                 Logger.d(message = "Primality test timed out")
                 errorMessage.postValue("An error has occurred. Please try again.")
             }
@@ -180,7 +180,7 @@ class CalcViewModel : ViewModel() {
                     Ln: $naturalLog
                     Square: $square
                     Cube: $cube
-                    IsPrime: $isPrime
+                    Is prime: $isPrime
                 """.trimIndent()
                 }
                 withContext(Dispatchers.Main) {

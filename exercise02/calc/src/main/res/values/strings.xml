@@ -9,5 +9,6 @@
     <string name="hint_enter_number">Enter a number</string>
     <string name="error_message">An error has occurred. Please try again.</string>
     <string name="run">run</string>
+    <string name="enter_a_number">Enter a number</string>
 
 </resources>

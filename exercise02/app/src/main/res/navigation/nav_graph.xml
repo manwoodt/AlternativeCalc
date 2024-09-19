@@ -24,6 +24,9 @@
         <action
             android:id="@+id/action_menuFragment_to_calcFragment"
             app:destination="@id/calcFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_coroutineFragment"
+            app:destination="@id/coroutineFragment" />
 
     </fragment>
 
@@ -71,5 +74,11 @@
         android:name="com.course.calc.CalcFragment"
         android:label="CalcFragment"
         tools:layout="@layout/fragment_calc"/>
+    <fragment
+        android:id="@+id/coroutineFragment"
+        android:name="com.course.checkcoroutines.CoroutineFragment"
+        android:label="CoroutineFragment"
+        tools:layout="@layout/fragment_coroutine"/>
+
 
 </navigation>
