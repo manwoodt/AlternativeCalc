@@ -1,5 +1,6 @@
 package com.course.calc
 
+import android.app.AlertDialog
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,10 +35,16 @@ class CalcFragment : FragmentLogger() {
     }
 
     private fun observeViewModel() {
+
         viewModel.results.observe(viewLifecycleOwner, Observer { results ->
             hideProgressBar()
             binding.resultTextView.text = results
         })
+
+        viewModel.errorMessage.observe(viewLifecycleOwner) { message ->
+            showErrorDialog(message)
+            viewModel.errorMessage.value = null}
+
 
         viewModel.buttonText.observe(viewLifecycleOwner, Observer { buttonTexts ->
             binding.btnFactorial.text = buttonTexts[Operations.FACTORIAL]
@@ -47,6 +54,17 @@ class CalcFragment : FragmentLogger() {
             binding.btnSimplicityTest.text = buttonTexts[Operations.SIMPLICITY_TEST]
             binding.btnRunAll.text = buttonTexts[Operations.RUN_ALL]
         })
+
+    }
+
+    private fun showErrorDialog(message: String) {
+        Logger.e(message = "Showing error dialog: $message")
+        AlertDialog.Builder(requireContext())
+            .setTitle("Error")
+            .setMessage(message)
+            .setPositiveButton("OK") { dialog, _ -> dialog.dismiss() }
+            .show()
+
     }
 
     private fun setupButtons() {
