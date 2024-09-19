@@ -1,9 +1,0 @@
-<resources>
-    <string name="input_x1">Input x1:</string>
-    <string name="input_y1">Input y1:</string>
-    <string name="input_r1">Input r1:</string>
-    <string name="input_x2">Input x2:</string>
-    <string name="input_y2">Input y2:</string>
-    <string name="input_r2">Input r2:</string>
-    <string name="check_intersection">Check Intersection</string>
-</resources>

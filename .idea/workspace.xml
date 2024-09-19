@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="706e38f1-6e3e-4245-ac1a-1838595a047d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Alternative Calc.apk" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/androidTest/java/com/pool/ex00/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/java/com/pool/ex00/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/values-night/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/app/src/test/java/com/pool/ex00/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise0/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/androidTest/java/com/example/ex04/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/ic_launcher-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/java/com/example/ex04/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/java/com/example/ex04/MenuFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/layout/fragment_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/app/src/test/java/com/example/ex04/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/androidTest/java/com/example/circles/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/java/com/example/circles/CirclesFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/java/com/example/circles/CirclesModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/java/com/example/circles/CirclesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/res/layout/fragment_circles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/circles/src/test/java/com/example/circles/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/src/androidTest/java/com/example/logger/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/src/main/java/com/example/logger/AddLogging.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/src/main/java/com/example/logger/FragmentLogger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/src/main/java/com/example/logger/Logger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/logger/src/test/java/com/example/logger/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/androidTest/java/com/example/primenumbers/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/res/layout/fragment_prime_numbers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/primenumbers/src/test/java/com/example/primenumbers/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/androidTest/java/com/example/speechmodule/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/res/layout/fragment_speech_module.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/speechmodule/src/test/java/com/example/speechmodule/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/androidTest/java/com/example/thermometer/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/java/com/example/thermometer/ThermometerFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/java/com/example/thermometer/ThermometerViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/res/layout/fragment_thermometer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise01/thermometer/src/test/java/com/example/thermometer/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/deploymentTargetSelector.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/easycode.ignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/easycode/codeContext.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/easycode/codebase-v2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/easycode/rc-output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/migrations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/androidTest/java/com/course/checkcoroutines/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/java/com/course/checkcoroutines/CoroutineFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/res/layout/fragment_coroutine.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/CheckCoroutines/src/test/java/com/course/checkcoroutines/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/androidTest/java/com/example/ex04/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/ic_launcher-playstore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/java/com/example/ex04/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/java/com/example/ex04/MenuFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/layout/fragment_menu.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/navigation/nav_graph.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/values/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/values/themes.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/app/src/test/java/com/example/ex04/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/androidTest/java/com/course/calc/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/java/com/course/calc/CalcFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/java/com/course/calc/CalcViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/java/com/course/calc/Operations.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/res/layout/fragment_calc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/calc/src/test/java/com/course/calc/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/androidTest/java/com/example/circles/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/java/com/example/circles/CirclesFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/java/com/example/circles/CirclesModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/java/com/example/circles/CirclesViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/res/layout/fragment_circles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/circles/src/test/java/com/example/circles/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/src/androidTest/java/com/example/logger/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/src/main/java/com/example/logger/AddLogging.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/src/main/java/com/example/logger/FragmentLogger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/src/main/java/com/example/logger/Logger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/logger/src/test/java/com/example/logger/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/androidTest/java/com/example/primenumbers/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/java/com/example/primenumbers/PrimeNumbersViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/res/layout/fragment_prime_numbers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/primenumbers/src/test/java/com/example/primenumbers/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/androidTest/java/com/example/speechmodule/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/java/com/example/speechmodule/SpeechModuleViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/res/layout/fragment_speech_module.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/speechmodule/src/test/java/com/example/speechmodule/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/consumer-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/androidTest/java/com/example/thermometer/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/java/com/example/thermometer/ThermometerFragment.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/java/com/example/thermometer/ThermometerViewModel.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/res/drawable/button_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/res/layout/fragment_thermometer.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/res/values/colors.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/main/res/values/styles.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercise02/thermometer/src/test/java/com/example/thermometer/ExampleUnitTest.kt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2mIj8BureWxJf2rWHVqFhcl4BYm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Oleg/AndroidStudioProjects/AltCalc/AlternativeCalc/Alternative Calc"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="706e38f1-6e3e-4245-ac1a-1838595a047d" name="Changes" comment="" />
+      <created>1726770825644</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726770825644</updated>
+    </task>
+    <servers />
+  </component>
+</project>
