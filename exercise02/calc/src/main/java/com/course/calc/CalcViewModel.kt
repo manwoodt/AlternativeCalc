@@ -37,7 +37,7 @@ class CalcViewModel : ViewModel() {
 
         updateButtonState(operation, "CANCEL")
         // обновление _buttonText через создание новый map, mutableMap не подходит,
-        // потому что изменения внутри нее не будут отправляться наблюдателям
+        //   потому что изменения внутри нее не будут отправляться наблюдателям
 
         val job = viewModelScope.launch {
             try {
